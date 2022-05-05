@@ -1,4 +1,5 @@
 public class BruteForce {
+    // метод ищет подходящий ключ перебирая все ключи, верным будет считатся ключ с большим количеством пробелов в тексте
     public static byte decrypt(String message) {
         byte key = 127;
         int k = 0;
