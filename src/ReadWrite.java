@@ -18,4 +18,10 @@ public class ReadWrite {
         writer.flush();
         writer.close();
     }
+    public static void writeEncrypt (String path, String text) throws  IOException {
+        FileWriter writer = new FileWriter(path);
+        writer.write(text);
+        writer.flush();
+        writer.close();
+    }
 }
