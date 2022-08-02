@@ -1,10 +1,12 @@
+package ru.Evgeniy.Lozovoi;
+
 import java.io.IOException;
 import java.util.*;
 
 public class StaticAnalyse {
-    public static  Character[] words = {'о','е','а','и','н','т','с','р','в','л','к','м','д','п','у','я','ы','ь','г','з','б','ч','й','х','ж','ш','ю','ц','щ','э','ф','ъ','ё'};
-    private static String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-    public static int staticAnalyseResult(String text) {
+    private static final Character[] words = {'о','е','а','и','н','т','с','р','в','л','к','м','д','п','у','я','ы','ь','г','з','б','ч','й','х','ж','ш','ю','ц','щ','э','ф','ъ','ё'};
+    private static final String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+    protected int staticAnalyseResult(String text) {
         TreeMap<Character, Double> map = staticAnalyse(text);
         Character[] keys = new Character[map.size()];
         int key = 0;
@@ -21,7 +23,7 @@ public class StaticAnalyse {
         key = Math.abs(key);
         return key;
     }
-    public static int[] resultText(Character[] chars){
+    protected   int[] resultText(Character[] chars){
         int result = 0;
         int[] temp = new int[chars.length];
         for (int i = 0; i < chars.length; i++) {
@@ -34,7 +36,7 @@ public class StaticAnalyse {
         }
         return temp;
     }
-    private static Map<Integer, Integer> oneMap(int[] data) {
+    private  Map<Integer, Integer> oneMap(int[] data) {
         Map<Integer, Integer> map = new HashMap<>();
         for (Integer ints : data) {
             if (!map.containsKey(ints)) {
@@ -45,7 +47,7 @@ public class StaticAnalyse {
         }
         return map;
     }
-    public static <K, V extends Comparable<V>> Map<K, V> sortByValues(final Map<K, V> map) {
+    protected   <K, V extends Comparable<V>> Map<K, V> sortByValues(final Map<K, V> map) {
         Comparator<K> valueComparator =  new Comparator<K>() {
             public int compare(K k1, K k2) {
                 int compare = map.get(k2).compareTo(map.get(k1));
@@ -57,7 +59,7 @@ public class StaticAnalyse {
         sortedByValues.putAll(map);
         return sortedByValues;
     }
-    public static TreeMap<Character, Double> staticAnalyse(String text){
+    protected   TreeMap<Character, Double> staticAnalyse(String text){
         TreeMap<Character, Double> staticWordsText = new TreeMap<>();
         for (int i = 0; i < alphabet.length(); i++) {
             Double x = 0.0;

@@ -1,3 +1,5 @@
+package ru.Evgeniy.Lozovoi;
+
 import java.io.*;
 
 public class ReadWrite {
